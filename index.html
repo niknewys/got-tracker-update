@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  
+  <head>
+    
+    <meta charset="utf-8">
+
+    <title>Title Goes Here</title> 
+
+  </head> 
+
+<body>
+  
+  <h2>Games of Thrones Bingo</h2>
+  
+  List Here
+  <ul id="linedata"></ul>
+  
+  <div id="table_info"></div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.2/tabletop.min.js"></script>
+
+    <script type='text/javascript'> 
+
+      var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1yRzLgCZs5Ndww2Th6xfkB2AJq_RutDRIORZrOwKR5lU/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+
+      $(document).ready( function() {
+        Tabletop.init( { key: publicSpreadsheetUrl,
+                         callback: showInfo,
+                         debug: true } )
+      })
+      function showInfo(data, tabletop) {
+
+      console.log(data);
+
+      $("#table_info").text("We found the tables " + tabletop.model_names.join(", "));
+
+      $.each( tabletop.sheets("Sheet1").all(), function(i, linedata) {
+        // $('.post').append(
+        //   '<div class=”text”>' +
+        //   '<h1>' + data[i].person + '</h1>'+ data[i].theory +
+        //   '</div>');
+        // }
+          var line_li = $('<li><h4>' + linedata.person + '</h4></li>')
+          line_li.append(linedata.theory);
+          line_li.append(linedata.happened);
+          line_li.appendTo("#linedata");
+      })
+
+      }
+
+      document.write("The published spreadsheet is located at <a target='_new' href='" + publicSpreadsheetUrl + "'>" + publicSpreadsheetUrl + "</a>");
+
+      //window.addEventListener('DOMContentLoaded', init)
+    </script>
+
+</body>
+
+</html>
