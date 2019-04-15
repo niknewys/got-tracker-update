@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Trocchi');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -52,7 +54,7 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: Arial;
+    font-family: 'Trocchi', serif;
 }
 .container {
 	max-width: 1060px;
@@ -122,11 +124,11 @@ h2 {
 	margin: 0;
 	text-align: center;
 	float: left;
-	padding: 2em;
+	padding: 2em 1em;
 	border: double 5px black;
 	margin: 0.5em;
 	height: 175px;
-	width: 175px;
+	width: 205px;
 	position: relative;
 	display: flex;
   	align-items: center;
@@ -140,17 +142,36 @@ h2 {
     line-height: 1.4;
     z-index: 999;
     position: relative;
+    font-size: 14px;
+	font-weight: 800;
 }
 #linedata .item h4 {
-	font-family: arial;
+	font-family: 'Trocchi', serif;
 	position: absolute;
-	top: 5px;
+	top: 20px;
 	left: 0;
 	width: 100%;
+	color: #696969;
 	text-align: center;
 	text-transform: uppercase;
 }
-#linedata .item .happenedno {
+.characterimg {
+	position: absolute;
+	top: -20px;
+	right: -20px;
+	width: 70px;
+	height: 70px;
+	overflow: hidden;
+	border: solid 2px black;
+	border-radius: 60px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+.characterimg img {
+	
+}
+#linedata .item .happened-no {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -164,7 +185,7 @@ h2 {
 	text-indent: -999px;
 	overflow: hidden;
 }
-#linedata .item .happenedyes {
+#linedata .item .happened-yes {
 	position: absolute;
 	bottom: 0;
 	z-index: 10;
@@ -178,7 +199,7 @@ h2 {
 	text-indent: -999px;
 	overflow: hidden;
 }
-#linedata .item .happenedsortof {
+#linedata .item .happened-sortof {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -186,6 +207,20 @@ h2 {
 	height: 100%;
 	z-index: 10;
 	background-image: url('../images/sortof.svg');
+	background-position: center 90%;
+	background-repeat: no-repeat;
+	background-size: 40px;
+	text-indent: -999px;
+	overflow: hidden;
+}
+#linedata .item .happened-unknown {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	background-image: url('../images/clock.svg');
 	background-position: center 90%;
 	background-repeat: no-repeat;
 	background-size: 40px;
@@ -205,5 +240,12 @@ h2 {
    	line-height: 1.4;
    	margin: 1em 0;
    }
+   #linedata .item {
+		width: 40%;
+	}
 }
-
+@media (max-width:768px)  {
+	#linedata .item {
+		width: 90%;
+	}
+}

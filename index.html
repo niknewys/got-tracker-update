@@ -25,7 +25,7 @@
       <div class="left">
 
           <img src="images/banner.jpg">
-          
+
       </div>
 
       <div class="right">
@@ -67,8 +67,9 @@
         //   '</div>');
         // }
           var line_li = $('<div class="item"><h4>' + linedata.person + '</h4>')
+          line_li.append('<span class="characterimg" style="background-image:url(images/' + linedata.character + '.jpg);"></span>');
           line_li.append('<div class="theory">' + linedata.theory + '</div>');
-          line_li.append('<span class="happened' + linedata.happened + '">' + linedata.happened + '</span></div>');
+          line_li.append('<span class="happened-' + linedata.happened + '">' + linedata.happened + '</span></div>');
           line_li.appendTo("#linedata");
       })
       $.each( tabletop.sheets("Scores").all(), function(i, linedata) {
