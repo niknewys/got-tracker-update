@@ -6,20 +6,24 @@
     
     <meta charset="utf-8">
 
-    <title>Title Goes Here</title> 
-
+    <title>Game of Thrones Bingo</title> 
+    
+    <link rel="stylesheet" href="css/GameofThrones.css">
+    <link rel="stylesheet" href="css/style.css">
+    
   </head> 
 
 <body>
   
   <h2>Games of Thrones Bingo</h2>
   
-  List Here
-  <ul id="linedata"></ul>
+  <div class="container">
+
+    <div id="linedata"></ul>
+
+  </div>
+
   
-  <div id="table_info"></div>
-
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.2/tabletop.min.js"></script>
 
@@ -44,15 +48,15 @@
         //   '<h1>' + data[i].person + '</h1>'+ data[i].theory +
         //   '</div>');
         // }
-          var line_li = $('<li><h4>' + linedata.person + '</h4></li>')
-          line_li.append(linedata.theory);
-          line_li.append(linedata.happened);
+          var line_li = $('<div class="item"><h4>' + linedata.person + '</h4>')
+          line_li.append('<div class="theory">' + linedata.theory + '</div>');
+          line_li.append('<span class="happened' + linedata.happened + '">' + linedata.happened + '</span></div>');
           line_li.appendTo("#linedata");
       })
 
       }
 
-      document.write("The published spreadsheet is located at <a target='_new' href='" + publicSpreadsheetUrl + "'>" + publicSpreadsheetUrl + "</a>");
+      //document.write("The published spreadsheet is located at <a target='_new' href='" + publicSpreadsheetUrl + "'>" + publicSpreadsheetUrl + "</a>");
 
       //window.addEventListener('DOMContentLoaded', init)
     </script>
