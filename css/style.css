@@ -228,13 +228,19 @@ h2 {
 	overflow: hidden;
 }
 
-@media (max-width:961px)  {
+@media only screen and (max-width:961px)  {
+
    .leaderboard .left, .leaderboard .right {
 		width: 100%;
 		text-align: center;
    }
    body {
    	background-size: cover;
+   	width: 100%;
+   }
+   img {
+   	max-width: 100%;
+   	margin-bottom: 1em;
    }
    h2 {
    	line-height: 1.4;
@@ -242,6 +248,11 @@ h2 {
    }
    #linedata .item {
 		width: 40%;
+		height: auto;
+		min-height: 150px;
+	}
+	#linedata .item .theory {
+		font-size: 17px;
 	}
 }
 @media (max-width:768px)  {
