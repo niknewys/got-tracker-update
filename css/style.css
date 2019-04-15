@@ -48,15 +48,33 @@ body {
     padding: 2em;
     margin: 0;
     background-image: url('../images/thumb-1920-637668.jpg');
-    background-size: 100%;
+    background-size: 150%;
     background-position: top;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: Arial;
 }
 .container {
 	max-width: 1060px;
 	padding: 0em;
 	margin: 0 auto;
+}
+img {
+	text-align: center;
+	margin: 0 auto;
+}
+h3 {
+	font-style: normal;
+    font-family: 'Game of Thrones'; 
+    font-weight: normal; 
+    font-style: normal;
+    font-size: 15px;
+    margin: 0 0;
+    text-align: center;
+}
+.scores h4 {
+	display: inline-block;
+	min-width: 100px;
 }
 h2 {
     font-style: normal;
@@ -66,6 +84,31 @@ h2 {
     font-size: 40px;
     margin: 2em 0;
     text-align: center;
+}
+.leaderboard {
+	clear: both;
+	float: left;
+	width: 98%;
+	padding: 10px;
+}
+.leaderboard .left {
+	width: 50%;
+	float: left;
+}
+.leaderboard .right {
+	border-radius: 5px;
+	width: 49%;
+	float: right;
+	text-align: left;
+	background-color: rgba(255,255,255,0.8);
+	padding-top: 1em;
+	padding-bottom: 0;
+	border: solid 2px black;
+}
+
+.scores {
+	border-bottom: solid 2px black;
+	padding: 1px 5px;
 }
 #linedata {
 	list-style: none;
@@ -95,6 +138,8 @@ h2 {
     font-weight: normal; 
     font-style: normal;
     line-height: 1.4;
+    z-index: 999;
+    position: relative;
 }
 #linedata .item h4 {
 	font-family: arial;
@@ -107,13 +152,58 @@ h2 {
 }
 #linedata .item .happenedno {
 	position: absolute;
-	bottom: 5px;
+	bottom: 0;
 	left: 0;
 	width: 100%;
-	text-align: center;
-	font-family: arial;
-	text-transform: uppercase;
+	z-index: 10;
+	height: 100%;
+	background-image: url('../images/no.svg');
+	background-position: center 90%;
+	background-repeat: no-repeat;
+	background-size: 40px;
+	text-indent: -999px;
+	overflow: hidden;
 }
 #linedata .item .happenedyes {
-	color: red;
+	position: absolute;
+	bottom: 0;
+	z-index: 10;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('../images/yes.svg');
+	background-position: center 90%;
+	background-repeat: no-repeat;
+	background-size: 40px;
+	text-indent: -999px;
+	overflow: hidden;
 }
+#linedata .item .happenedsortof {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	background-image: url('../images/sortof.svg');
+	background-position: center 90%;
+	background-repeat: no-repeat;
+	background-size: 40px;
+	text-indent: -999px;
+	overflow: hidden;
+}
+
+@media (max-width:961px)  {
+   .leaderboard .left, .leaderboard .right {
+		width: 100%;
+		text-align: center;
+   }
+   body {
+   	background-size: cover;
+   }
+   h2 {
+   	line-height: 1.4;
+   	margin: 1em 0;
+   }
+}
+

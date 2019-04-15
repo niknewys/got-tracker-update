@@ -15,11 +15,29 @@
 
 <body>
   
-  <h2>Games of Thrones Bingo</h2>
+  <h2>Games of Thrones Theories Bingo</h2>
+
   
   <div class="container">
+    
+    <div class="leaderboard">
+      
+      <div class="left">
 
-    <div id="linedata"></ul>
+          <img src="images/banner.jpg">
+          
+      </div>
+
+      <div class="right">
+
+        <h3>Leaderboard</h3>
+        <div id="scores"></div>
+
+      </div>
+    </div>
+    <div id="linedata"></div>
+
+    
 
   </div>
 
@@ -52,6 +70,16 @@
           line_li.append('<div class="theory">' + linedata.theory + '</div>');
           line_li.append('<span class="happened' + linedata.happened + '">' + linedata.happened + '</span></div>');
           line_li.appendTo("#linedata");
+      })
+      $.each( tabletop.sheets("Scores").all(), function(i, linedata) {
+        // $('.post').append(
+        //   '<div class=”text”>' +
+        //   '<h1>' + data[i].person + '</h1>'+ data[i].theory +
+        //   '</div>');
+        // }
+          var line_li = $('<div class="scores"><h4>' + linedata.person + '</h4>')
+          line_li.append('<span class="score">' + linedata.score + '</span></div>');
+          line_li.appendTo("#scores");
       })
 
       }
