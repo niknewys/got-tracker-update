@@ -34,7 +34,17 @@
       <div class="right">
 
         <h3>Leaderboard</h3>
+
+        <div class="scores-top">
+          <span class="sc sc-name">Name</span>
+          <span class="sc sc-correct">Correct</span>
+          <span class="sc sc-sortof">Sort Of</span>
+          <span class="sc sc-wrong">Wrong</span>
+          <span class="sc sc-total">Total Score</span>
+        </div>
         <div id="scores"></div>
+
+        <p class="small">*Wrong answers do not impact on total score at the moment</p>
 
       </div>
     </div>
@@ -82,7 +92,10 @@
         //   '</div>');
         // }
           var line_li = $('<div class="scores"><h4>' + linedata.person + '</h4>')
-          line_li.append('<span class="score">' + linedata.score + '</span></div>');
+          line_li.append('<span class="sc sc-correct">' + linedata.correct + '</span>');
+          line_li.append('<span class="sc sc-sortof">' + linedata.sortof + '</span>');
+          line_li.append('<span class="sc sc-wrong">' + linedata.wrong + '</span>');
+          line_li.append('<span class="sc sc-total">' + linedata.total + '</span></div>');
           line_li.appendTo("#scores");
       })
 

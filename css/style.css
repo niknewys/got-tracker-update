@@ -93,6 +93,10 @@ h2 {
 	width: 98%;
 	padding: 10px;
 }
+.leaderboard h3 {
+	padding: 10px;
+	font-size: 30px;
+}
 .leaderboard .left {
 	width: 50%;
 	float: left;
@@ -108,9 +112,37 @@ h2 {
 	border: solid 2px black;
 }
 
-.scores {
+.scores, .scores-top {
 	border-bottom: solid 2px black;
-	padding: 1px 5px;
+	padding: 3px 5px;
+}
+.scores-top {
+	font-weight: bold;
+	font-size: 15px;
+	background: black;
+    color: white;
+    padding: 7px 5px;
+}
+.sc {
+	width: 80px;
+	display: inline-block;
+	text-align: center;
+}
+.small {
+	font-size: 12px;
+	padding: 5px;
+	text-align: center;
+}
+/*.sc-correct {
+	color: green;
+}*/
+.sc-wrong {
+	color: red;
+}
+.sc-total {
+	font-weight: bold;
+	font-size: 16px;
+	width: 100px;
 }
 #linedata {
 	list-style: none;
